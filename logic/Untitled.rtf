@@ -1,0 +1,40 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1138\cocoasubrtf510
+{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+{\colortbl;\red255\green255\blue255;}
+\paperw11900\paperh16840\margl1440\margr1440\vieww10640\viewh12380\viewkind0
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural
+
+\f0\fs24 \cf0 TotalCount 						// Total Count of songs played\
+Count							//Count of particular song played\
+FractionPlayed						//Fraction of time song is played in percentage\
+rating=3							//Rating of newly added song\
+\
+If (FractionPlayed<35)\
+	a=1;\
+else if (35<=FractionPlayed<65)\
+	a=2;\
+else if (65<=FractionPlayed<95)\
+	a=3;\
+else\
+	a=4;\
+\
+Switch(a) \{\
+Case 1:							//fraction of song played is <35% decrease count\
+	Count--;\
+	break;\
+Case 2:\
+								//if between 35 and 65 Count unchanged\
+	break;\
+Case  3:\
+	Count++;						//if between 65 and 95 Count + 1and TotalCount +1\
+	Total Count++;\
+	break;\
+Case 4:\
+	Count+=2;					//If above 95 Count +2 and TotalCount +2\
+	Total Count+=2;\
+	break;		\
+\}\
+\
+rating = 5* (Count/TotalCount);			// Rating of particular song\
+\
+}
